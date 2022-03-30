@@ -1,0 +1,165 @@
+<div class="hero">
+  <div class="highway"></div>
+  <div class="flower"></div>
+  <div class="car">
+    <img id="car" src="car2 copy2.png" />
+  </div>
+</div>
+<script>
+  let number = 0;
+
+  function add() {
+    number += 5;
+    document.getElementById("number").innerHTML = number + "s";
+    document.getElementById("car").style.WebkitAnimationDuration = number + "s";
+  }
+  function subtract() {
+    number -= 5;
+    document.getElementById("number").innerHTML = number;
+    document.getElementById("car").style.WebkitAnimationDuration = number + "s";
+  }
+</script>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #09091a;
+  }
+
+  .highway {
+    height: 400px;
+    width: 500%;
+    display: block;
+    background-image: url(city.png);
+    position: absolute;
+    bottom: 60;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    background-repeat: repeat-x;
+    animation: highway 5s linear infinite;
+  }
+  @keyframes highway {
+    100% {
+      transform: translateX(-3400px);
+    }
+  }
+
+  .car {
+    left: 10%;
+
+    bottom: 100px;
+
+    position: absolute;
+    z-index: 5;
+    background-color: transparent;
+  }
+  #car {
+    width: 100%;
+    -webkit-animation-name: rotation;
+    -webkit-animation-iteration-count: infinite;
+    background-color: transparent;
+  }
+
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: translatex(-100%);
+    }
+    to {
+      -webkit-transform: translatex(1000%);
+    }
+  }
+
+  .buton {
+    border: 1px dotted #1fbdd9;
+    display: flex;
+    justify-content: center;
+  }
+  .buton a p {
+    color: #1fbdd9;
+    text-align: right;
+    font-size: 1.3rem;
+  }
+  .customizer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .counter {
+    display: flex;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 2px solid #1fbdd9;
+    border-radius: 30px;
+    box-shadow: 8px 8px 14px 0 rgba(0, 0, 0, 0.1);
+    width: auto;
+    padding: 15px;
+    height: 50px;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+  }
+
+  .minus {
+    color: #e26e6e;
+    flex-basis: 36px;
+    font-size: 30px;
+    border-radius: 50%;
+    height: 36px;
+    transition: 0.4s;
+  }
+
+  .plus {
+    color: #8ed273;
+    flex-basis: 36px;
+    font-size: 30px;
+    border-radius: 50%;
+    height: 36px;
+    transition: 0.4s;
+  }
+
+  .minus p {
+    position: relative;
+    margin: auto;
+  }
+
+  .plus p {
+    position: relative;
+    margin: auto;
+  }
+
+  .minus:hover {
+    font-weight: bold;
+    color: red;
+  }
+
+  .number {
+    min-width: 50px;
+    color: #1fbdd9;
+  }
+
+  .plus:hover {
+    font-weight: bold;
+    color: green;
+  }
+</style>
+<div class="buton">
+  <a href="index.html"><p><< Type 1</p></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="type-2.html"><p><< Type 2</p></a>
+
+  <br />
+</div>
+
+<div class="customizer">
+  <div class="counter">
+    <p style="color: #1fbdd9; margin: 15px">Speed</p>
+    &nbsp;&nbsp;
+    <div class="minus" onClick="subtract()"><p>-</p></div>
+    <div class="number" id="number"><p>0</p></div>
+    <div class="plus" onClick="add()"><p>+</p></div>
+  </div>
+</div>
