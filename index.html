@@ -1,0 +1,82 @@
+<div class="hero">
+  <div class="highway"></div>
+  <div class="flower"></div>
+  <div class="car">
+    <img src="car2 copy2.png" />
+  </div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #09091a;
+    background-image: url(http://image.s6.exacttarget.com/lib/fe9112727d67047576/m/1/uber_MADD_Firework111s_v3-15fps-compressor.gif);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+
+  .highway {
+    height: 400px;
+    width: 500%;
+    display: block;
+    background-image: url(city.png);
+    position: absolute;
+    bottom: 60;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    background-repeat: repeat-x;
+    animation: highway 5s linear infinite;
+  }
+  @keyframes highway {
+    100% {
+      transform: translateX(-3400px);
+    }
+  }
+
+  .car {
+    left: 10%;
+
+    bottom: 100px;
+
+    position: absolute;
+    z-index: 5;
+    background-color: transparent;
+  }
+  .car img {
+    width: 100%;
+    animation: car 5s linear infinite;
+    background-color: transparent;
+  }
+
+  @keyframes car {
+    100% {
+      transform: translateX(1500%);
+      opacity: 1;
+    }
+
+    75% {
+      transform: translateY(-2px);
+      transform: translatex(750%);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-3px);
+      transform: translatex(500%);
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(-2px);
+      transform: translatex(250%);
+      opacity: 1;
+    }
+    0% {
+      transform: translateY(-1px);
+      transform: translatex(-500%);
+      opacity: 1;
+    }
+  }
+</style>
